@@ -1,15 +1,16 @@
-package web.Dao;
-
-import org.hibernate.Criteria;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+//package web.Dao;
+//
+//import org.hibernate.Criteria;
+//import org.hibernate.Session;
+//import org.hibernate.SessionFactory;
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Repository;
 //import web.Model.Car;
-
-import javax.transaction.Transactional;
-import java.util.List;
-
+////import web.Model.Car;
+//
+//import javax.transaction.Transactional;
+//import java.util.List;
+//
 //@Repository
 //public class CarDao implements Dao {
 //

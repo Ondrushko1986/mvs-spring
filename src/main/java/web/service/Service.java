@@ -1,9 +1,9 @@
-package web.service;
+//package web.service;
 //
 //import web.Model.Car;
-
-import java.util.List;
-
+//
+//import java.util.List;
+//
 //public interface Service {
 //
 //    void addCar(Car car);
@@ -15,5 +15,5 @@ import java.util.List;
 //    Car findCarById (int id);
 //
 //    void deleteCar(int id);
-
+//
 //}

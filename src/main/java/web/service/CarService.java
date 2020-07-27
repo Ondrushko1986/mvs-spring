@@ -1,14 +1,14 @@
-package web.service;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+//package web.service;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Component;
 //import web.Dao.CarDao;
 //import web.Model.Car;
-
-
-import javax.transaction.Transactional;
-import java.util.List;
-
+//
+//
+//import javax.transaction.Transactional;
+//import java.util.List;
+//
 //@org.springframework.stereotype.Service
 //@Transactional
 //public class CarService implements Service {

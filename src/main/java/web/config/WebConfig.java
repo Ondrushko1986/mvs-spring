@@ -35,6 +35,7 @@ public class WebConfig implements WebMvcConfigurer {
         templateResolver.setApplicationContext(applicationContext);
         templateResolver.setPrefix("/WEB-INF/pages/");
         templateResolver.setSuffix(".html");
+        templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
     }
 
@@ -52,6 +53,8 @@ public class WebConfig implements WebMvcConfigurer {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
         resolver.setTemplateEngine(templateEngine());
         registry.viewResolver(resolver);
+        resolver.setCharacterEncoding("UTF-8");
+        resolver.setContentType("text/html; charset=UTF-8");
     }
 
     @Bean(name = "localeResolver")
@@ -65,9 +68,6 @@ public class WebConfig implements WebMvcConfigurer {
     @Bean(name = "messageSource")
     public MessageSource getMessageResource()  {
         ReloadableResourceBundleMessageSource messageResource= new ReloadableResourceBundleMessageSource();
-
-        // Read i18n/messages_xxx.properties file.
-        // For example: i18n/messages_en.properties
         messageResource.setBasename("classpath:resources/messages");
         messageResource.setDefaultEncoding("UTF-8");
         return messageResource;

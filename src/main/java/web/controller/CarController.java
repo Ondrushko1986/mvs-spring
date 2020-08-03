@@ -13,6 +13,7 @@ public class CarController {
 
     CarService carService;
 
+
     @Autowired
     public CarController(CarService carService) {
         this.carService = carService;
@@ -20,14 +21,19 @@ public class CarController {
 
 
     @GetMapping(value = "/cars")
-    public Model getPage(Model model) {
-//        ModelAndView modelAndView = new ModelAndView("cars/list");
-//        List<Car> list = carService.listCars();
-//        modelAndView.addObject("list", list);
-        model.addAttribute("car1", getCar1());
-        model.addAttribute("car2", getCar2());
-        model.addAttribute("car3", getCar3());
-        return model;
+    public Model getPage(Model model, @RequestParam("locale") String locale) {
+        if (locale.equals("ru")) {
+            model.addAttribute("header", "МАШИНЫ");
+            model.addAttribute("car1", getCar1());
+            model.addAttribute("car2", getCar2());
+            model.addAttribute("car3", getCar3());
+            return model;
+        } else
+            model.addAttribute("header", "CARS");
+            model.addAttribute("car1", getCar1());
+            model.addAttribute("car2", getCar2());
+            model.addAttribute("car3", getCar3());
+            return model;
     }
 
     private Car getCar1() {

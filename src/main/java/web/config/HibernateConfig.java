@@ -17,14 +17,14 @@
 //
 //@Configuration
 //@EnableTransactionManagement
-//@ComponentScan("java")
+//@ComponentScan("web")
 //@PropertySource(value = {"classpath:db.properties"})
 //public class HibernateConfig {
 //
-//    @Autowired
+//
 //    private Environment environment;
 //
-//    @Bean
+//
 //    public LocalSessionFactoryBean getSessionFactory() {
 //        LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 //        factoryBean.setDataSource(getDataSource());
@@ -33,7 +33,8 @@
 //                return factoryBean;
 //    }
 //
-//    private Properties hibernateProperties(){
+//
+//    Properties hibernateProperties(){
 //        Properties properties = new Properties();
 //        properties.put("hibernate.dialect",environment.getProperty("hibernate.dialect"));
 //        properties.put("hibernate.show_sql", environment.getProperty("hibernate.show_sql"));
@@ -42,7 +43,7 @@
 //
 //    }
 //
-//    @Bean
+//
 //    public DataSource getDataSource() {
 //        DriverManagerDataSource dataSource = new DriverManagerDataSource();
 //        dataSource.setUrl(environment.getProperty("db.url"));
@@ -51,7 +52,7 @@
 //        return dataSource;
 //    }
 //
-//    @Bean
+//
 //    public HibernateTransactionManager getTransactionManager() {
 //        HibernateTransactionManager transactionManager = new HibernateTransactionManager();
 //        transactionManager.setSessionFactory(getSessionFactory().getObject());

@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import web.Model.Car;
 import web.service.CarService;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 
 public class CarController {
@@ -20,20 +23,17 @@ public class CarController {
     }
 
 
+
     @GetMapping(value = "/cars")
-    public Model getPage(Model model, @RequestParam("locale") String locale) {
+    public String getPage(Model model, @RequestParam("locale") String locale) {
         if (locale.equals("ru")) {
             model.addAttribute("header", "МАШИНЫ");
-            model.addAttribute("car1", getCar1());
-            model.addAttribute("car2", getCar2());
-            model.addAttribute("car3", getCar3());
-            return model;
+            model.addAttribute("cars",getCarsList());
+            return "cars";
         } else
             model.addAttribute("header", "CARS");
-            model.addAttribute("car1", getCar1());
-            model.addAttribute("car2", getCar2());
-            model.addAttribute("car3", getCar3());
-            return model;
+            model.addAttribute("cars",getCarsList());
+            return "cars";
     }
 
     private Car getCar1() {
@@ -61,6 +61,14 @@ public class CarController {
         car.setName("audi");
         car.setSpeed(250);
         return car;
+    }
+
+    public List<Car> getCarsList(){
+        List<Car> list = new ArrayList<>();
+        list.add(getCar1());
+        list.add(getCar2());
+        list.add(getCar3());
+        return list;
     }
 
 

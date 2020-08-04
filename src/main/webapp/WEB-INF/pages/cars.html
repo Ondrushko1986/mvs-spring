@@ -25,37 +25,22 @@
 <p></p>
 <!--/*@thymesVar id="header" type="java"*/-->
 <h2 th:text="${header}"></h2>
+<p></p>
 <table border="2" style="width:300px">
     <tr>
-        <th>ID</th>
+        <th>id</th>
         <th>name</th>
         <th>speed</th>
         <th>color</th>
     </tr>
-    <tr>
-        <!--/*@thymesVar id="car" type="java"*/-->
-        <td th:text="${car1.Id}"></td>
-        <td th:text="${car1.name}"></td>
-        <td th:text="${car1.speed}"></td>
-        <td th:text="${car1.color}"></td>
-    </tr>
 
-    <tr>
-        <!--/*@thymesVar id="car" type="java"*/-->
-        <td th:text="${car2.Id}"></td>
-        <td th:text="${car2.name}"></td>
-        <td th:text="${car2.speed}"></td>
-        <td th:text="${car2.color}"></td>
-    </tr>
 
-    <tr>
-        <!--/*@thymesVar id="car" type="java"*/-->
-        <td th:text="${car3.Id}"></td>
-        <td th:text="${car3.name}"></td>
-        <td th:text="${car3.speed}"></td>
-        <td th:text="${car3.color}"></td>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.name}"></td>
+        <td th:text="${car.speed}"></td>
+        <td th:text="${car.color}"></td>
     </tr>
-
 </table>
 
 
